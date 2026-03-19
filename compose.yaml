@@ -23,7 +23,7 @@ services:
     image: bitnami/php-fpm:latest
     container_name: ${MY_USERNAME}-php # (2.1) กำหนดชื่อคอนเทนเนอร์ให้สอดคล้องกับ .env [4]
     volumes:
-      - ./_______:/var/www/html # (2.2) เติมชื่อโฟลเดอร์ที่เก็บไฟล์โค้ดของ Backend
+      - ./index.php:/var/www/html # (2.2) เติมชื่อโฟลเดอร์ที่เก็บไฟล์โค้ดของ Backend
     networks:
       - backend-zone
     ##secrets: # (2.3) ถ้าต้องการให้ Backend ใช้รหัสผ่านฐานข้อมูลจาก Secret ให้เปิดบรรทัดนี้และเติมชื่อ Secret ที่ประกาศด้านล่าง [10]
