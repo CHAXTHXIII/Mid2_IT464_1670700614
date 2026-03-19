@@ -22,7 +22,7 @@ services:
   backend-php:
     image: bitnami/php-fpm:latest
     container_name: ${MY_USERNAME}-php # (2.1) กำหนดชื่อคอนเทนเนอร์ให้สอดคล้องกับ .env [4]
-    volumes:
+    volumes: http://localhost:13402
       - ./index.php:/var/www/html # (2.2) เติมชื่อโฟลเดอร์ที่เก็บไฟล์โค้ดของ Backend
     networks:
       - backend-zone
